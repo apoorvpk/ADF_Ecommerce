@@ -1,5 +1,5 @@
 {
-	"name": "DS_RESTAPI__Parquet3",
+	"name": "DS_RESTAPI__PARQUET3",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "LS_ADLS",

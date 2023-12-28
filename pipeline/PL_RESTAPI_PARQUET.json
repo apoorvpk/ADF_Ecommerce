@@ -144,7 +144,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DS_RESTAPI__Parquet3",
+						"referenceName": "DS_RESTAPI__PARQUET3",
 						"type": "DatasetReference"
 					}
 				]
