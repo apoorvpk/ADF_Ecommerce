@@ -1,0 +1,155 @@
+{
+	"name": "PL_RESTAPI_PARQUET",
+	"properties": {
+		"activities": [
+			{
+				"name": "REST API",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['ID']"
+								},
+								"sink": {
+									"name": "ID"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Gender']"
+								},
+								"sink": {
+									"name": "Gender"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Weight_in_gms']"
+								},
+								"sink": {
+									"name": "Weight_in_gms"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Customer_rating']"
+								},
+								"sink": {
+									"name": "Customer_rating"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Prior_purchases']"
+								},
+								"sink": {
+									"name": "Prior_purchases"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Warehouse_block']"
+								},
+								"sink": {
+									"name": "Warehouse_block"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Discount_offered']"
+								},
+								"sink": {
+									"name": "Discount_offered"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Mode_of_Shipment']"
+								},
+								"sink": {
+									"name": "Mode_of_Shipment"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Product_importance']"
+								},
+								"sink": {
+									"name": "Product_importance"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Cost_of_the_Product']"
+								},
+								"sink": {
+									"name": "Cost_of_the_Product"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Customer_care_calls']"
+								},
+								"sink": {
+									"name": "Customer_care_calls"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Reached.on.Time_Y.N']"
+								},
+								"sink": {
+									"name": "Reached.on.Time_Y.N"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_RESTAPI",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_RESTAPI__Parquet3",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
