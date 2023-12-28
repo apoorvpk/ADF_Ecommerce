@@ -818,7 +818,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/PL_SQL_PARQUET')]",
+			"name": "[concat(parameters('factoryName'), '/PL_SQL_PARQUEt')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
