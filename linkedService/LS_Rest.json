@@ -1,0 +1,12 @@
+{
+	"name": "LS_Rest",
+	"properties": {
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://retoolapi.dev/A6yG9Q/data",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
